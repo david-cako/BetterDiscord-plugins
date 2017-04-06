@@ -1,0 +1,13 @@
+{
+  "info": {
+    "name": "Auto scroll",
+    "authors": [ "david-cako" ],
+    "version": "1.0",
+    "description": "Scroll to bottom of messsage log on channel-change.",
+    "repository": "https://github.com/david-cako/betterdiscord-plugins",
+    "homepage": "https://github.com/david-cako/betterdiscord-plugins",
+    "reloadable":  true
+  },
+  "defaultSettings": [],
+  "permissions": []
+}
