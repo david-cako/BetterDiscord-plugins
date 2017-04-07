@@ -22,7 +22,7 @@ module.exports = (Plugin, BD, Vendor) => {
         }
 
         updateHandlers() {
-            var elements = document.querySelectorAll(".guild, .channel > a");
+            var elements = document.querySelectorAll(".guild, .channel-text > a");
             this.handlerElements = [];
 
             for (var i = 0; i < elements.length; i++) {
