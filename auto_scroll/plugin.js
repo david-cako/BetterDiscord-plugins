@@ -16,27 +16,35 @@ module.exports = (Plugin, BD, Vendor) => {
                 if (messages != undefined) { 
                     clearInterval(interval);
                     messages.scrollTop = messages.scrollHeight;
+                    pluginObject.updateHandlers()
                 }
             }, 100); 
         }
 
+        updateHandlers() {
+            var elements = document.querySelectorAll(".guild, .channel > a");
+            this.handlerElements = [];
+
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].addEventListener("click", this.autoScroll);
+                this.handlerElements.push(elements[i]);
+            }
+        }
+
         onStart() {
             Api.log('auto-scroll loaded');
-            
-            this.guilds = document.getElementsByClassName("guild"); 
-            
-            for (var i = 0; i < this.guilds.length; i++) { 
-                this.guilds[i].addEventListener("click", this.autoScroll);
-            }
+            global.pluginObject = this;
 
+            this.updateHandlers(); 
+            
             return true;
         }
 
         onStop() {
             Api.log('auto-scroll unloaded');
             
-            for (var i = 0; i < this.guilds.length; i++) { 
-                this.guilds[i].removeEventListener("click", this.autoScroll);
+            for (var i = 0; i < this.handlerElements.length; i++) { 
+                this.handlerElements[i].removeEventListener("click", this.autoScroll);
             }
 
             return true;
