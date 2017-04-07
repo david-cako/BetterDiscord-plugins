@@ -1,4 +1,8 @@
-# BetterDiscord(v2) plugins
+# BetterDiscord plugins
+
+Collection of plugins I have written for BetterDiscord.
+
+Keep in mind that these are for BetterDiscord v2, as I didn't want to write them for a deprecated version.  It would be trivial to adapt them to v1 if you wanted to.
 
 ## Installation
 
